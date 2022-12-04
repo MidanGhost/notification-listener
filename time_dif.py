@@ -7,7 +7,7 @@ from datetime import datetime
 def time():
     while True:
        # Taking input from the user
-        data = input_group("Trip calculator:", [
+        data = input_group("Trip Calculator", [
             input('Start Time', name='start', type=TIME,
                 required=True, PlaceHolder=""),
             
@@ -18,7 +18,7 @@ def time():
                 PlaceHolder="Scooter/ Bike ",
                 datalist=['scooter', 'bike']),
 
-            input('penalty (optional)', name='penalty', value=0 , type=NUMBER),
+            input('Penalty RM (Optional)', name='penalty', value=0 ,min=0, type=NUMBER),
             
         ])
 
