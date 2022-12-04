@@ -49,7 +49,7 @@ def time():
         if min <60:
             full_time=''
         elif min == 60:
-            full_time = 'One hour ||'    
+            full_time = 'One hour ||'   
         else:
             full_time=str(delta) +' ||' 
 
