@@ -44,7 +44,8 @@ def time():
       
         # Convert the difference to sec
         sec = delta.total_seconds()
-
+        mSec = sec/1000
+        
         # sec to min
         min = sec / 60
 
@@ -74,7 +75,7 @@ def time():
         if str(data['type']) == "scooter" and min>0 or str(data['type']) == "bike" and min>0 : 
                 popup("Trip Details",
                     f"Start time: {data['start']}\nEnd time: {data['end']}\
-                    \nType: {str(data['type'])}\nDuration: {full_time} {min} min || {sec} sec\nTrip Fare: RM{round(trip_fare,4)}\n{fine_text}",
+                    \nType: {str(data['type'])}\nDuration: {full_time} {min} min || {format(mSec, '.6f')} M-sec\nTrip Fare: RM{round(trip_fare,4)}\n{fine_text}",
                     closable=True )
         
         else:   
