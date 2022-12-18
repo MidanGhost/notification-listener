@@ -3,8 +3,17 @@ from winrt.windows.ui.notifications.management import UserNotificationListener
 from winrt.windows.ui.notifications import KnownNotificationBindings
 from pushbullet import PushBullet
 import os
+
+def check(mass):
+    if "+60" in mass:
+        check.name= " TRYKE"
+
+    else:
+        check.name="" 
+
 def handler(getNotif, getUsernotif):
-        
+        app=["WhatsApp","Google Chrome"]
+        admin=["Yazan2","Yazan TRYKE"]
         access_token = "o.mBGplKdbbFig9RrbETUFXADRttI1iHpd"
         pb = PushBullet(access_token)
         unotification = getNotif.get_notification(getUsernotif.user_notification_id)
@@ -13,8 +22,7 @@ def handler(getNotif, getUsernotif):
         if hasattr(unotification, "app_info"):
             app_name=unotification.app_info.display_info.display_name
 
-            if  app_name =="WhatsApp" or app_name =="Google Chrome":
-                masg_name= " TRYKE"
+            if  app_name in app:
                 #print("App Name: ",app_name)
                 text_sequence = unotification.notification.visual.get_binding(KnownNotificationBindings.get_toast_generic()).get_text_elements()
                 it = iter(text_sequence)
@@ -23,7 +31,7 @@ def handler(getNotif, getUsernotif):
                 next(it, None)
                 if it.has_current:
                         masg=it.current.text
-                        if title =="Yazan2" or title =="Yazan TRYKE" :
+                        if title in admin :
                             
                             if masg =="/remote":
                                 print(masg)
@@ -47,10 +55,8 @@ def handler(getNotif, getUsernotif):
                                 # pb.push_note("WhatsApp","🤬")
     
                         else:
-                            # if title.isdigit(): 
-                            #     masg_name=""
-
-                            pb.push_note(title+masg_name,masg)
+                            check(title)                          
+                            pb.push_note(title+check.name,masg)
                             #print(title +"("+masg_name +masg)
                             
             
