@@ -12,7 +12,7 @@ def check(mass):
         check.name = "" 
 
 def handler(getNotif, getUsernotif):
-        access_token = "o.mBGplKdbbFig9RrbETUFXADRttI1iHpd"
+        access_token = "*****"
         pb = PushBullet(access_token)
         app=["WhatsApp","Google Chrome"]
         admin=["Yazan2","Yazan TRYKE"]
