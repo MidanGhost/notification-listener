@@ -1,4 +1,3 @@
-from textwrap import indent
 from winrt.windows.ui.notifications.management import UserNotificationListener
 from winrt.windows.ui.notifications import KnownNotificationBindings
 from pushbullet import PushBullet
@@ -7,10 +6,10 @@ from adminCommand import *
 
 def check(mass):
     if "+" in mass:
-        check.name= " TRYKE"
+        check.name = " TRYKE"
 
     else:
-        check.name="" 
+        check.name = "" 
 
 def handler(getNotif, getUsernotif):
         access_token = "o.mBGplKdbbFig9RrbETUFXADRttI1iHpd"
@@ -25,19 +24,21 @@ def handler(getNotif, getUsernotif):
             app_name=unotification.app_info.display_info.display_name
 
             if  app_name in app:
+                
                 #print("App Name: ",app_name)
                 text_sequence = unotification.notification.visual.get_binding(KnownNotificationBindings.get_toast_generic()).get_text_elements()
                 it = iter(text_sequence)
                 #print("Notification title: ", it.current.text)
                 title=it.current.text
                 next(it, None)
+
                 if it.has_current:
                         masg=it.current.text
                         if title in admin :
                             adminCommand(masg)
                         else:
                             check(title)                          
-                            pb.push_note(title+check.name,masg)
+                            pb.push_note(title + check.name ,masg)
                             #print(title +"("+masg_name +masg)
                        
             else:
