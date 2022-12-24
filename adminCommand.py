@@ -8,7 +8,7 @@ def adminCommand(masg):
 
         print(masg)
         os.startfile("C:\Program Files (x86)\TeamViewer\TeamViewer.exe")
-        pb.push_note("System","Remote access has been activated ✔️\nAccess ID: 1691180062")
+        pb.push_note("System","Remote access has been activated ✔️\nAccess ID: **********")
 
     elif masg=="/off":
             print("Turnd Off")
