@@ -2,7 +2,7 @@ import os
 from pushbullet import PushBullet
 
 def adminCommand(masg):
-    access_token = "o.mBGplKdbbFig9RrbETUFXADRttI1iHpd"
+    access_token = "*****"
     pb = PushBullet(access_token)
     if masg =="/remote":
 
