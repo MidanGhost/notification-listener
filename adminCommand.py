@@ -1,16 +1,15 @@
 import os
 from pushbullet import PushBullet
+from tokens import *
 
 def adminCommand(masg):
-    access_token = "******"
     pb = PushBullet(access_token)
 
     # Open TeamViewer to access to pc 
     if masg =="/remote":
 
-        print(masg)
         os.startfile("C:\Program Files (x86)\TeamViewer\TeamViewer.exe")
-        pb.push_note("System","Remote access has been activated ✔️\nAccess ID: **********")
+        pb.push_note("System","Remote access has been activated ✔️\nAccess ID: " + TeamViewer_ID)
 
     # Turn off the script 
     elif masg=="/off":

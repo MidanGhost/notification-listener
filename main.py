@@ -2,7 +2,7 @@ from winrt.windows.ui.notifications.management import UserNotificationListener
 from winrt.windows.ui.notifications import KnownNotificationBindings
 from pushbullet import PushBullet
 from adminCommand import *
-
+from tokens import *
 
 def check(mass):
     if "+" in mass:
@@ -13,7 +13,7 @@ def check(mass):
 
 def handler(getNotif, getUsernotif):
         #access token from pushbullet
-        access_token = "******"
+        
         pb = PushBullet(access_token)
     
         app=["WhatsApp","Google Chrome"]
